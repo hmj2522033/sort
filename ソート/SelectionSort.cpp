@@ -1,0 +1,20 @@
+#include "SelectionSort.h"
+
+void SelectionSort::Exec(int* array, int size)
+{
+    for (int i = 0; i < size - 1; i++)
+    {
+        int minIndex = i;
+        for (int j = i + 1; j < size; j++)
+        {
+            if (array[j] < array[minIndex])
+            {
+                minIndex = j;
+            }
+        }
+        if (minIndex != i)
+        {
+            Swap(array[i], array[minIndex]);
+        }
+    }
+}
